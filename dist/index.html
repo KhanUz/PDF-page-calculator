@@ -10,12 +10,21 @@
 </head>
 
 <body>
-    <div class="container">
-        <h2 class="h2">Calculate PDF pages</h2>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container">
+            <div>
+                <a class="navbar-brand" href="#">PDF Calculator</a>
 
+            </div>
+            <div>
+                <button class="btn btn-outline-primary" type="button">Theme</button>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
         <div class="container mt-5">
-            <div class="filter">
-                <form class="row gx-3 gy-2 align-items-center">
+            <div id="filterBar">
+                <form class="row gx-3 gy-2 align-items-center" id="form">
                     <div class="col-sm-2">
                         <label for="startNumber" class="visually-hidden">Starting Page:</label>
                         <input type="number" class="form-control" id="startNumber" placeholder="Starting Page">
@@ -28,14 +37,7 @@
                         <label for="pagesPerSide" class="visually-hidden">Pages per side:</label>
                         <input type="number" class="form-control" id="pagesPerSide" placeholder="Pages per side">
                     </div>
-                    <div class="col-sm-2">
-                        <label for="viewOption" class="visually-hidden">View Option:</label>
-                        <select class="form-select" id="viewOption">
-                            <option selected>Choose View...</option>
-                            <option value="horizontal">Horizontal View</option>
-                            <option value="vertical">Vertical View</option>
-                        </select>
-                    </div>
+
                     <div class="col-sm-2">
                         <div class="form-check d-flex align-items-center">
                             <input type="checkbox" class="form-check-input" id="onBothSides" checked>
@@ -49,18 +51,40 @@
 
                 </form>
             </div>
-            <div class="upload ">
+            <div id="uploadBar">
                 <div class="border border-1 rounded-4 border-info bg-body-tertiary w-100 my-3 ">
                     <p
                         class="text-center text-info opacity-75  h4 d-flex justify-content-center align-items-center m-5 ">
                         Drop PDF</p>
                 </div>
             </div>
+            <div id="copyBar">
+                <div class="border border-1 rounded-4 border-info bg-body-tertiary w-100 my-3 ">
+                    <div
+                        class="text-center text-info opacity-75  h4 d-flex justify-content-center align-items-center m-5 ">
+                        <span class="mx-3">1, 2 ,3 ,4</span>
+                        <button type="button" class="btn btn-outline-info"><i class="bi bi-clipboard"></i></button>
+                    </div>
+                    <div
+                        class="text-center text-info opacity-75  h4 d-flex justify-content-center align-items-center m-5 ">
+                        <span class="mx-3">1, 2 ,3 ,4</span>
+                        <button type="button" class="btn btn-outline-info"><i class="bi bi-clipboard"></i></button>
+                    </div>
+                </div>
+            </div>
             <div class="PDF  ">
-                <canvas id="cnv" class="w-100"></canvas>
+                <div>
+                    <p class="text-capitalize h4">front pages</p>
+                    <canvas id="frontCanvas" class="w-100"></canvas>
+                </div>
+                <div>
+                    <p class="text-capitalize h4">back pages</p>
+                    <canvas id="backCanvas" class="w-100"></canvas>
+                </div>
             </div>
         </div>
-        <script src="bundle.js"></script>
+    </div>
+    <script src="bundle.js"></script>
 </body>
 
 </html>

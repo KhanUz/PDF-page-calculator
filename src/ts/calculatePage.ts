@@ -4,7 +4,7 @@ interface PageV {
 }
 
 export function calculatePages(start: number, end: number, onSignlePage: number, isBothSides: boolean): PageV {
-    let entireSection = Array.from({ length: end - start }, (_, i) => i + start)
+    let entireSection = Array.from({ length: end - start + 1 }, (_, i) => i + start)
 
 
 
@@ -32,4 +32,6 @@ export function calculatePages(start: number, end: number, onSignlePage: number,
         }
     }
 }
+
+
 
