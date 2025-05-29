@@ -3,7 +3,7 @@ interface PageV {
     backPage: number[]
 }
 
-function calculatePages(start: number, end: number, onSignlePage: number, isBothSides: boolean): PageV {
+export function calculatePages(start: number, end: number, onSignlePage: number, isBothSides: boolean): PageV {
     let entireSection = Array.from({ length: end - start }, (_, i) => i + start)
 
 
@@ -33,4 +33,3 @@ function calculatePages(start: number, end: number, onSignlePage: number, isBoth
     }
 }
 
-console.log(calculatePages(1, 6, 2, true));

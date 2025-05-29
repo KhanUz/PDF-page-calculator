@@ -10,8 +10,57 @@
 </head>
 
 <body>
-    <p>Hello World</p>
-    <script src="bundle.js"></script>
+    <div class="container">
+        <h2 class="h2">Calculate PDF pages</h2>
+
+        <div class="container mt-5">
+            <div class="filter">
+                <form class="row gx-3 gy-2 align-items-center">
+                    <div class="col-sm-2">
+                        <label for="startNumber" class="visually-hidden">Starting Page:</label>
+                        <input type="number" class="form-control" id="startNumber" placeholder="Starting Page">
+                    </div>
+                    <div class="col-sm-2">
+                        <label for="endNumber" class="visually-hidden">Ending Page:</label>
+                        <input type="number" class="form-control" id="endNumber" placeholder="Ending Page">
+                    </div>
+                    <div class="col-sm-2">
+                        <label for="pagesPerSide" class="visually-hidden">Pages per side:</label>
+                        <input type="number" class="form-control" id="pagesPerSide" placeholder="Pages per side">
+                    </div>
+                    <div class="col-sm-2">
+                        <label for="viewOption" class="visually-hidden">View Option:</label>
+                        <select class="form-select" id="viewOption">
+                            <option selected>Choose View...</option>
+                            <option value="horizontal">Horizontal View</option>
+                            <option value="vertical">Vertical View</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="form-check d-flex align-items-center">
+                            <input type="checkbox" class="form-check-input" id="onBothSides" checked>
+                            <label class="form-check-label" for="onBothSides">On both sides?</label>
+                        </div>
+                    </div>
+
+                    <div class="col-2">
+                        <button type="submit" class="btn btn-primary">Preview</button>
+                    </div>
+
+                </form>
+            </div>
+            <div class="upload ">
+                <div class="border border-1 rounded-4 border-info bg-body-tertiary w-100 my-3 ">
+                    <p
+                        class="text-center text-info opacity-75  h4 d-flex justify-content-center align-items-center m-5 ">
+                        Drop PDF</p>
+                </div>
+            </div>
+            <div class="PDF  ">
+                <canvas id="cnv" class="w-100"></canvas>
+            </div>
+        </div>
+        <script src="bundle.js"></script>
 </body>
 
 </html>
