@@ -30,6 +30,5 @@ export async function getPDFpageData(pages: number[], file: string | URL | Array
         page?.cleanup();
     }
 
-
     return allRenders;
 }

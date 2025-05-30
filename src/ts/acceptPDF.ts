@@ -42,33 +42,3 @@ export function dragNdrop(): Promise<ArrayBuffer> {
         }); // Use { once: true } if you only expect one drop event
     });
 }
-
-// How to use it:
-async function handleDrop() {
-    try {
-        const arrayBuffer = await dragNdrop();
-        console.log("PDF ArrayBuffer received:", arrayBuffer);
-        // Now you can work with the arrayBuffer, e.g., pass it to a PDF library
-    } catch (error) {
-        console.error("Drag and drop error:", error);
-    }
-}
-
-// You might call handleDrop() when your application initializes or when the drop area is ready.
-// For demonstration, let's just show the structure.
-// You would typically attach this to some event or setup logic.
-// For example, if you want it to be ready as soon as the page loads:
-document.addEventListener('DOMContentLoaded', () => {
-    // Optionally call it, or have another function that sets up drop handling.
-    // In many UIs, you'd call dragNdrop() once to set up the listener
-    // and then process the returned Promise.
-    // Example:
-    // const dropArea = document.getElementById("dropArea");
-    // if (dropArea) {
-    //     // You would attach the dragNdrop function to initiate the process
-    //     // when a file is actually dropped.
-    //     // A more typical use case for dragNdrop returning a Promise
-    //     // is if you only want to set up the listener once and await
-    //     // the result of the *next* successful drop.
-    // }
-});
