@@ -9,7 +9,9 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
 
-<body>
+<body data-bs-theme="">
+
+
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container">
             <div>
@@ -17,73 +19,69 @@
 
             </div>
             <div>
-                <button class="btn btn-outline-primary" type="button">Theme</button>
+                <button class="btn" id="themeBTN" type="button"><i class="bi bi-lightbulb-fill"></i></button>
             </div>
         </div>
     </nav>
-    <div class="container">
-        <div class="container mt-5">
-            <div id="filterBar">
-                <form class="row gx-3 gy-2 align-items-center" id="form">
-                    <div class="col-sm-2">
-                        <label for="startNumber" class="visually-hidden">Starting Page:</label>
-                        <input type="number" class="form-control" id="startNumber" placeholder="Starting Page">
-                    </div>
-                    <div class="col-sm-2">
-                        <label for="endNumber" class="visually-hidden">Ending Page:</label>
-                        <input type="number" class="form-control" id="endNumber" placeholder="Ending Page">
-                    </div>
-                    <div class="col-sm-2">
-                        <label for="pagesPerSide" class="visually-hidden">Pages per side:</label>
-                        <input type="number" class="form-control" id="pagesPerSide" placeholder="Pages per side">
-                    </div>
+    <div class="container mt-5">
+        <div id="filterBar">
+            <form class="row gx-3 gy-2 align-items-center" id="form">
+                <div class="col-sm-2">
+                    <label for="startNumber" class="visually-hidden">Starting Page:</label>
+                    <input type="number" class="form-control" id="startNumber" placeholder="Starting Page">
+                </div>
+                <div class="col-sm-2">
+                    <label for="endNumber" class="visually-hidden">Ending Page:</label>
+                    <input type="number" class="form-control" id="endNumber" placeholder="Ending Page">
+                </div>
+                <div class="col-sm-2">
+                    <label for="pagesPerSide" class="visually-hidden">Pages per side:</label>
+                    <select class="form-select" id="pagesPerSide">
+                        <option value="1" selected>1</option>
+                        <option value="2">2</option>
+                        <option value="4">4</option>
+                        <option value="6">6</option>
+                        <option value="9">9</option>
+                        <option value="16">16</option>
+                    </select>
+                </div>
 
-                    <div class="col-sm-2">
-                        <div class="form-check d-flex align-items-center">
-                            <input type="checkbox" class="form-check-input" id="onBothSides" checked>
-                            <label class="form-check-label" for="onBothSides">On both sides?</label>
-                        </div>
+                <div class="col-sm-2">
+                    <div class="form-check d-flex align-items-center">
+                        <input type="checkbox" class="form-check-input" id="onBothSides" checked>
+                        <label class="form-check-label" for="onBothSides">On both sides?</label>
                     </div>
+                </div>
 
-                    <div class="col-2">
-                        <button type="submit" class="btn btn-primary">Preview</button>
-                    </div>
+                <div class="col-2">
+                    <button type="submit" class="btn btn-primary">Preview</button>
+                </div>
 
-                </form>
-            </div>
-            <div id="uploadBar">
-                <div class="border border-1 rounded-4 border-info bg-body-tertiary w-100 my-3 ">
-                    <p
-                        class="text-center text-info opacity-75  h4 d-flex justify-content-center align-items-center m-5 ">
-                        Drop PDF</p>
-                </div>
-            </div>
-            <div id="copyBar">
-                <div class="border border-1 rounded-4 border-info bg-body-tertiary w-100 my-3 ">
-                    <div
-                        class="text-center text-info opacity-75  h4 d-flex justify-content-center align-items-center m-5 ">
-                        <span class="mx-3">1, 2 ,3 ,4</span>
-                        <button type="button" class="btn btn-outline-info"><i class="bi bi-clipboard"></i></button>
-                    </div>
-                    <div
-                        class="text-center text-info opacity-75  h4 d-flex justify-content-center align-items-center m-5 ">
-                        <span class="mx-3">1, 2 ,3 ,4</span>
-                        <button type="button" class="btn btn-outline-info"><i class="bi bi-clipboard"></i></button>
-                    </div>
-                </div>
-            </div>
-            <div class="PDF  ">
-                <div>
-                    <p class="text-capitalize h4">front pages</p>
-                    <canvas id="frontCanvas" class="w-100"></canvas>
-                </div>
-                <div>
-                    <p class="text-capitalize h4">back pages</p>
-                    <canvas id="backCanvas" class="w-100"></canvas>
-                </div>
+            </form>
+        </div>
+        <div id="copyBar">
+
+        </div>
+        <div id="uploadBar">
+            <div id="dropArea" class="border border-1 rounded-4 border-info bg-body-tertiary w-100 my-3 ">
+                <p class="text-center text-info opacity-75  h4 d-flex justify-content-center align-items-center m-5 ">
+                    Drop PDF <small class="small fs-6"> (if u want to preview; or dont u diside it)</small></p>
             </div>
         </div>
+        <div id="pdfBar">
+            <div>
+                <p class="text-capitalize h4">front pages</p>
+                <canvas id="frontCanvas" class="w-100"></canvas>
+            </div>
+            <div>
+                <p class="text-capitalize h4">back pages</p>
+                <canvas id="backCanvas" class="w-100"></canvas>
+            </div>
+        </div>
+
+
     </div>
+    <script src="js/bootstrap.bundle.min.js"></script>
     <script src="bundle.js"></script>
 </body>
 
